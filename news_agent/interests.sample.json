@@ -1,0 +1,21 @@
+[
+  {
+    "name": "Vision Language",
+    "keywords": ["vision language", "multimodal", "VLA"],
+    "feeds": [
+      "https://export.arxiv.org/rss/cs.CV",
+      "https://news.google.com/rss/search?q=vision+language",
+      "https://export.arxiv.org/rss/cs.AI"
+    ],
+    "limit": 3
+  },
+  {
+    "name": "Robotics",
+    "keywords": ["robotics", "motion planning", "autonomy"],
+    "feeds": [
+      "https://export.arxiv.org/rss/cs.RO",
+      "https://export.arxiv.org/rss/cs.SY"
+    ],
+    "limit": 2
+  }
+]
