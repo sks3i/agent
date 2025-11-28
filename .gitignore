@@ -1,0 +1,19 @@
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.so
+
+# Environment files
+.env
+.env.*
+news_agent/story_history.db
+
+# Virtual envs
+venv/
+.env.local
+
+# IDE
+.vscode/
+.idea/
+
+news_agent/interests.json

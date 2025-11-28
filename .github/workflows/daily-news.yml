@@ -1,0 +1,26 @@
+name: Daily News Digest
+
+on:
+  schedule:
+    - cron: '0 8 * * *'  # 8:00 UTC daily
+  workflow_dispatch:
+
+jobs:
+  run-agent:
+    runs-on: ubuntu-latest
+    env:
+      NEWS_AGENT_KEYWORDS: "vision language,robotics,optimization"
+      NEWS_AGENT_FEEDS: "https://export.arxiv.org/rss/cs.CV,https://export.arxiv.org/rss/cs.RO"
+      NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+      NEWS_AGENT_DB: news_agent/story_history.db
+      OPENAI_API_KEY: ${{ secrets.OAI_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip && pip install -r requirements.txt
+      - name: Run news agent
+        run: python -m news_agent.main
