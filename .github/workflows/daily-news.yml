@@ -14,6 +14,7 @@ jobs:
       NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
       NEWS_AGENT_DB: news_agent/story_history.db
       OPENAI_API_KEY: ${{ secrets.OAI_KEY }}
+      NEWS_AGENT_INTERESTS_URL: ${{ secrets.NEWS_AGENT_INTERESTS_URL }}
     steps:
       - uses: actions/checkout@v4
       - name: Set up Python
